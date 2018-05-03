@@ -1,0 +1,17 @@
+@keyframes load-view__show-wait-icon {
+  from { transform: translateX(-150px) scale(0.8); }
+  to { transform: translateX(0px) scale(1.5); }
+}
+@keyframes load-view__scale-wait-icon {
+  from { transform: scale(5) rotate(0deg); }
+  to { transform: scale(1) rotate(360deg); }
+}
+@keyframes load-view__scale-wait-icon_type4 {
+  from { transform: scale(5) rotate(0deg); }
+  to { transform: scale(1) rotate(-360deg); }
+}
+//@keyframes load-view__body__pannel__loading {
+//  25% { box-shadow: none; }
+//  50% { box-shadow: 2px 0 currentColor; }
+//  75% { box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+//}

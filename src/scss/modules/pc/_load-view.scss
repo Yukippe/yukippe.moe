@@ -1,0 +1,236 @@
+@include pc-layout {
+  .load-view {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    min-width: $min-width; min-height: $min-height;
+    background-color: #2b81af;
+    overflow: hidden;
+    z-index: 1000;
+  }
+  .load-view__frame {
+    position: absolute;
+    top:20px; left: 20px;
+    width: calc(100% - 40px); height: calc(100% - 40px);
+    background-color: #2b81af;
+  }
+  .load-view__frame__point {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height:100%;
+
+    div {
+      position: absolute;
+      width: 40px;  height: 40px;
+      border: dashed 3px #fff;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+    div:nth-child(1) { top: 0; left: 0; }
+    div:nth-child(2) { top: 0; right: 0; }
+    div:nth-child(3) { bottom: 0; left: 0; }
+    div:nth-child(4) { bottom: 0; right: 0; }
+  }
+  .load-view__frame__line {
+    position: absolute;
+    top: 37px; left: 37px;
+    width: calc(100% - 74px); height: calc(100% - 74px);
+
+    div {
+      position: absolute;
+      border: dashed 2px #fff;
+      box-sizing: border-box;
+    }
+    div:nth-child(1) { top:0; left:0; width: 100%; height: 1px; }
+    div:nth-child(2) { top:0; right:0; width: 1px; height: 100%; }
+    div:nth-child(3) { top:0; left:0; width: 1px; height: 100%; }
+    div:nth-child(4) { bottom:0; left:0; width: 100%; height: 1px; }
+
+  }
+  .load-view__body {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  .load-view__body__bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    &::before,
+    &::after {
+      content:""; display: block;
+      position: absolute;
+      width: calc(100% - 180px); height: calc(100% - 180px);
+      border-radius: 5px;
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    &::before { top: 80px; left: 80px; }
+    &::after  { bottom: 80px; right: 80px; }
+  }
+
+  .load-view__body__pannel {
+    position: absolute;
+    top: 0; left: calc(50% - 450px);
+    width: 900px; height: 100%;
+  }
+  .load-view__body__pannel__icon {
+    position: absolute;
+    top: calc(50% - 60px);
+    width: 120px; height: 120px;
+    opacity: 0;
+
+    .box {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+
+      &::after {
+        content: ""; display: block;
+        position: absolute;
+        top: 8px; left: 8px;
+        width: calc(100% - 16px); height: calc(100% - 16px);
+        border: solid 2px transparent;
+        box-sizing: border-box;
+      }
+
+      .frame {
+        position: absolute;
+        width: 30%; height: 30%;
+
+        &::before,
+        &::after { content: ""; display: block; position: absolute; }
+        &::before { width: 100%; height: 8px; }
+        &::after { width: 8px; height: 100%; }
+      }
+      .frame:nth-child(1) {
+        top: 0; right: 0;
+        &::before, &::after { top: 0; right: 0; }
+      }
+      .frame:nth-child(2) {
+        bottom: 0; left: 0;
+        &::before, &::after { bottom: 0; left: 0; }
+      }
+      .frame:nth-child(3) {
+        top: 0; left: 0;
+        &::before, &::after { top: 0; left: 0; }
+      }
+      .frame:nth-child(4) {
+        bottom: 0; right: 0;
+        &::before, &::after { bottom: 0; right: 0; }
+      }
+    }
+    .icon {
+      position: absolute;
+      top: 25px; left: 25px;
+      width: calc(100% - 50px); height: calc(100% - 50px);
+      background-size: 150%;
+      background-position: center;
+    }
+  }
+
+  .load-view__body__pannel__icon_type_1 {
+    left: 84px;
+    .box {
+      &::after { border-color: $theme-light-purple; }
+      .frame {
+        &::before,
+        &::after { background-color: $theme-light-purple; }
+      }
+    }
+    .icon { background-image: url(../images/load-view/wait/1.png); }
+
+  }
+  .load-view__body__pannel__icon_type_2 {
+    left: 288px;
+    .box {
+      &::after { border-color: $theme-light-purple; }
+      .frame {
+        &::before,
+        &::after { background-color: $theme-light-purple; }
+      }
+    }
+    .icon { background-image: url(../images/load-view/wait/2.png); }
+  }
+  .load-view__body__pannel__icon_type_3 {
+    right: 288px;
+    .box {
+      &::after { border-color: $theme-light-purple; }
+      .frame {
+        &::before,
+        &::after { background-color: $theme-light-purple; }
+      }
+    }
+    .icon { background-image: url(../images/load-view/wait/3.png); }
+  }
+  .load-view__body__pannel__icon_type_4 {
+    right: 84px;
+    .box {
+      &::after { border-color: $theme-light-purple; }
+      .frame {
+        &::before,
+        &::after { background-color: $theme-light-purple; }
+      }
+    }
+    .icon { background-image: url(../images/load-view/wait/4.png); }
+  }
+  //.load-view__body__pannel__loading {
+  //  position: absolute;
+  //  top: calc(50% + 130px); right: 60px;
+  //  width: 100px; height: 20px;
+  //
+  //  .text {
+  //    text-align: left;
+  //    color: #fff;
+  //  }
+  //  .point {
+  //    display: inline-block;
+  //    margin-right: 8px;
+  //  }
+  //
+  //}
+
+
+
+
+
+
+
+
+  /**************************************************************************
+  * animation
+  ***************************************************************************/
+
+  .load-view__body__pannel__icon { .box { animation: rotate360 3s ease 0s infinite; } }
+
+  .load-view__body__pannel__icon_type_1 {
+    animation:
+      fadein 0.8 ease 0s forwards,
+      load-view__show-wait-icon 0.8s ease 0s forwards;
+    .icon { animation: load-view__scale-wait-icon 1s ease 0s forwards; }
+  }
+  .load-view__body__pannel__icon_type_2 {
+    animation:
+            fadein 0.8 ease 0s forwards,
+            load-view__show-wait-icon 0.8s ease 0s forwards;
+    .icon { animation: load-view__scale-wait-icon 1s ease 0.5s forwards; }
+  }
+  .load-view__body__pannel__icon_type_3 {
+    animation:
+            fadein 0.8 ease 0s forwards,
+            load-view__show-wait-icon 0.8s ease 0s forwards;
+    .icon { animation: load-view__scale-wait-icon 1s ease 1s forwards; }
+  }
+  .load-view__body__pannel__icon_type_4 {
+    animation:
+            fadein 0.8 ease 0s forwards,
+            load-view__show-wait-icon 0.8s ease 0s forwards;
+    .icon { animation: load-view__scale-wait-icon_type4 1s ease 1.5s forwards; }
+  }
+  //.load-view__body__pannel__loading {
+  //  .point {  animation: load-view__body__pannel__loading 4s infinite step-start both; }
+  //}
+
+
+}
